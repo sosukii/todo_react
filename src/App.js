@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
-
+import TodoList from "./Components/TodoList";
 function App() {
+    const arrayOfGoal=[
+        {id:1, checkbox:false, title:'изучить es6 (for react native)'},
+        {id:2, checkbox:false, title:'изучить react (for react native)'},
+        {id:3, checkbox:false, title:'изучить react native'}
+    ]
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+      <div className="wrapper" >
+        <h1>Fast React!</h1>
+
+          <TodoList arrayTodos={arrayOfGoal} />
+      </div>
+  )
+
 }
 
 export default App;
