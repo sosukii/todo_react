@@ -16,11 +16,19 @@ const styles={
     }
 }
 
-function TodoItem({objectValue, index}){
+function TodoItem({objectValue, index, onChange}){
+    const classes = []
+    if(objectValue.checkbox){
+        classes.push('done')
+    }
     return <div>
         <li style={styles.li}>
-            <span>
-                <input type="checkbox" style={styles.input}/>
+            <span className={classes.join(' ')}>
+                <input type="checkbox"
+                       checked={objectValue.checkbox}
+                       style={styles.input}
+                       onChange={()=>onChange(objectValue.id)}
+                />
                 <strong>{index +1}</strong>
                 &nbsp;
                 {objectValue.title}
@@ -31,6 +39,7 @@ function TodoItem({objectValue, index}){
 }
 TodoItem.propTypes={
     objectValue: PropTypes.object.isRequired,
-    index: PropTypes.number
+    index: PropTypes.number,
+    onChange: PropTypes.func.isRequired
 }
 export default TodoItem
