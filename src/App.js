@@ -1,31 +1,24 @@
-
-import TodoList from "./Components/TodoList";
 import React from "react";
-function App() {
-    const [arrayOfGoal, setTodos] = React.useState([
-        {id:1, checkbox:false, title:'изучить es6 (for react native)'},
-        {id:2, checkbox:false, title:'изучить react (for react native)'},
-        {id:3, checkbox:false, title:'изучить react native'}]
-    )
+import Header from "./Components/header/Header";
+import Main from "./Components/main/Main";
+import Footer from "./Components/footer/Footer";
 
-    function toggleTodo(id){
-        setTodos(
-            arrayOfGoal.map(todo=> {
-                if (todo.id===id) {
-                    todo.checkbox = !todo.checkbox
-                }
-                return todo
-            })
-        )
+class App extends React.Component {
+
+render(){
+    let style ={
+        div:{
+            textAlign:'center'
+        }
     }
-
-  return (
-      <div className="wrapper" >
-        <h1>Fast React!</h1>
-
-          <TodoList arrayTodos={arrayOfGoal} onToggle={toggleTodo}/>
-      </div>
-  )
+    return (
+        <div style={style.div} className="wrapper" >
+            < Header allProps={this.props.allProps} title={this.props.title}/>
+            < Main />
+            < Footer />
+        </div>
+    )
+}
 
 }
 

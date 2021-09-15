@@ -2,6 +2,7 @@
 <project version="4">
   <component name="JavaScriptLibraryMappings">
     <file url="file://$PROJECT_DIR$" libraries="{sec/node_modules}" />
-    <file url="PROJECT" libraries="{@types/prettier, sec/node_modules}" />
+    <file url="PROJECT" libraries="{@types/prettier, @types/react, sec/node_modules}" />
+    <includedPredefinedLibrary name="HTTP Response Handler" />
   </component>
 </project>
