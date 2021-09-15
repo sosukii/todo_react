@@ -4,9 +4,15 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+let testObject = {
+    Main:'/index',
+    About:'/about',
+    Price:'/buy/price',
+}
+const headTitle = <h1>It Is React baby ~</h1>
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App allProps={testObject} title={headTitle}/>
   </React.StrictMode>,
   document.getElementById('root')
 );
